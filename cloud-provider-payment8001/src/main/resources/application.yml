@@ -1,0 +1,26 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+
+  # 数据库相关配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/db_cloud2020?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml     # 配置mapper.xml文件扫描
+  type-aliases-package: com.atguigu.springcloud.entities   # 配置mapper对应的实体类包扫描
+  configuration:
+      mapUnderscoreToCamelCase: true      # 开启驼峰命名
+
+
+#控制台中打印输出sql语句
+logging:
+  level:
+      com.wyp.springcloud.dao: debug
