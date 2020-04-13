@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class ApplicationContextConfig {
     @Bean
-    @LoadBalanced
+    //@LoadBalanced  //ribbion使用自己写的轮询算法是需要将该注解去掉
     public RestTemplate getRestTemplate()
     {
         return new RestTemplate();
