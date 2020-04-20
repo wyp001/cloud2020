@@ -36,6 +36,7 @@ public class OrderHystirxController {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
     })
     public String paymentInfo_TimeOut(@PathVariable("id") Integer id) {
+        int age = 10/0;  //模拟报错时消费侧进行服务降级
         String result = paymentHystrixService.paymentInfo_TimeOut(id);
         return result;
     }
