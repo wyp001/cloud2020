@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableCircuitBreaker
+@EnableCircuitBreaker //服务降级使用
 public class PaymentHystrixMain8001 {
     public static void main(String[] args) {
             SpringApplication.run(PaymentHystrixMain8001.class, args);
