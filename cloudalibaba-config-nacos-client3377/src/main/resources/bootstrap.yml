@@ -1,0 +1,24 @@
+# nacos配置
+server:
+  port: 3377
+
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #Nacos服务注册中心地址
+      config:
+        server-addr: localhost:8848 #Nacos作为配置中心地址
+        file-extension: yaml #指定yaml格式的配置
+
+
+# ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+# nacos-config-client-dev.yaml
+# 注意:
+# 1.在nacos页面上创建yaml配置文件时，后缀名必须是yaml，写成yml或报错
+# 2.先在nacos网页（http://localhost:8848/nacos/）上配置配置文件在启动nacos配置中心微服务，否则会报错
+# 报错信息如下：Could not resolve placeholder 'config.info' in value "${config.info}"
+
+# nacos-config-client-test.yaml   ----> config.info
