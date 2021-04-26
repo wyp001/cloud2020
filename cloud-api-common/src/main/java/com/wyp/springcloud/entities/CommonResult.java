@@ -13,8 +13,13 @@ public class CommonResult<T> {
     private String message;
     private T   data;
 
-    public CommonResult(Integer code,String message){
-        this(code,message,null);
-    }
+    // public CommonResult(Integer code,String message){
+    //     // this(code,message,null);
+    // }
 
+    public CommonResult(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+        this.data = null;
+    }
 }
